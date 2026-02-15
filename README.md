@@ -6,15 +6,18 @@ Este proyecto toma en cuenta lo visto en el componente formativo "Construcción 
 
 * **Node.js**: Es el entorno de ejecución para JavaScript.
 * **Express**: Es el Framework para la creación de los servidios web.
-* **Middleware**: Es el manejo de los errores 
+* **Middleware**: Es el manejo de los errores.
+* **Thunder Client**: Es donde probamos las peticiones en Visual
 * **Git/GitHub**: Es para el control de versiones.
 
 ## Documentación de Servicios (Endpoints)
-| Método | Ruta | Descripción | Código | Errores |
-| :---: | :---: | :---: | :---: | :---: |
+| Método | Ruta | Descripción | Código |
+| :---: | :---: | :---: | :---: | 
 | GET | '/' | Ruta inicial para el mensaje de bienvenida |
-| GET | '/productos' | para mostrar la lista de todos los productos que se crearon como simulación | 200 OK | 500 |
-| POST | '/productos' | Se crea un nuevo producto. | 201 Created | 400 |
+| GET | '/productos' | para mostrar la lista de todos los productos que se crearon como simulación | 200 OK | 
+| POST | '/productos' | Se crea un nuevo producto. | 201 Created |
+| PUT | '/productos/:id' | Se actualiza un producto seleccionado con id | 404 Not Found |
+| DELETE | '/productos/:id' | Elimina un producto seleccionado por id | 404 no encontrado |
 
 ## Manejo de Errores
 Le añadi a la API un middleware centralizado que gestiona los errores, ubicado en `/middleware/errorHandler.js`.
