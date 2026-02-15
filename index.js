@@ -16,10 +16,29 @@ app.get('/', (req, res) => {
     res.send('Bienvenidos a la Tienda Virtual, el servidor está funcionando');
 });
 
-//Ruta donde el cliente pide ver la lista temporal que cree
+//Esta es la ruta para ver todo el listado de productos
 app.get('/productos', (req, res) => {
-    res.json(producto);  //aqui responod con la lista en JSON
-})
+    res.json(producto);
+});
+
+//Ruta donde el cliente pide ver un solo producto de la lista temporal que cree
+app.get('/productos/:id', (req, res, next) => {
+
+    //Se captura el ID de la url
+    const idUrl = req.params.id;
+
+    // se busca el producto en el arreglo
+    const productoEncontrado = producto.find(p => p.id.toString() === idUrl);
+
+    //Si no existe, se crea el error y se va al middleware
+    if (!productoEncontrado) {
+        const error = new Error("Ese ID no existe en la Base de datos");
+        error.status = 404;
+        return next(error);  //Se envia al errorHandler.js
+    }
+    // respuesta si existe el ID
+    res.json(productoEncontrado);  
+});
 
 //Ruta para crear un nuevo pruducto
 app.post('/productos', (req, res, next) => {
