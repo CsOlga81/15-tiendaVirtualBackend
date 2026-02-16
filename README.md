@@ -19,6 +19,13 @@ Este proyecto toma en cuenta lo visto en el componente formativo "Construcción 
 | PUT | '/productos/:id' | Se actualiza un producto seleccionado con id | 404 Not Found |
 | DELETE | '/productos/:id' | Elimina un producto seleccionado por id | 404 no encontrado |
 
+## Códigos utilizados:
+**200** (OK) todo salio bien
+**201** (Create) se usa cuando se crea un elemento nuevo
+**400** (Bad Request) error, cuando falta algún dato
+**404** (Not Found) elemento que no existe
+**500** (Internal Server Error) es error del servidor, algo fallo en el código
+
 ## Manejo de Errores
 Le añadi a la API un middleware centralizado que gestiona los errores, ubicado en `/middleware/errorHandler.js`.
 Los codigos utilizados son:
