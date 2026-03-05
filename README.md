@@ -16,8 +16,8 @@ Este proyecto toma en cuenta lo visto en el componente formativo "Construcción 
 | GET | '/' | Ruta inicial para el mensaje de bienvenida |
 | GET | '/productos' | para mostrar la lista de todos los productos que se crearon como simulación | 200 OK | 
 | POST | '/productos' | Se crea un nuevo producto. | 201 Created |
-| PUT | '/productos/:id' | Se actualiza un producto seleccionado con id | 404 Not Found |
-| DELETE | '/productos/:id' | Elimina un producto seleccionado por id | 404 no encontrado |
+| PUT | '/productos/:id' | Se actualiza un producto seleccionado con id | 200 OK |
+| DELETE | '/productos/:id' | Elimina un producto seleccionado por id | 200 OK |
 
 ## Códigos utilizados:
 **200** (OK) todo salio bien
@@ -38,4 +38,4 @@ Los codigos utilizados son:
 2. Se abre la terminal en la carperta del proyecto.
 3. Se ejecuta `npm install` para instalar las dependencias (Express).
 4. para iniciar el servidor se ejecuta el comando: `node index.js`  y enter
-5. Se abre el navegador con el `http://localhosts:3000`
+5. Se abre el navegador con el `http://localhost:3000`
