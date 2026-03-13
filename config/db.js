@@ -6,8 +6,9 @@ const connection = mysql.createConnection({
     user: 'root',
     password:'011203',
     database: 'tienda_virtual',
-    port: 3306
-})
+    port: 3306,
+    ssl: false
+});
 
 // aquí se verifica si la conexión funciona
 connection.connect((err) => {
@@ -16,17 +17,6 @@ connection.connect((err) => {
         return;
     }
     console.log('Está conectado con la base de datos con el ID: '+ connection.threadId);
-});
-
-connection.query('SELECT * FROM producto', (error, resultados) => {
-    if (error) {
-        console.error('Error en la consulta: '+ error.stack);
-        return;
-    }
-    console.log('Aquí están tus productos : ', resultados);
-
-    //Asi se cierra la conexión
-    connection.end();
 });
 
 module.exports = connection;
