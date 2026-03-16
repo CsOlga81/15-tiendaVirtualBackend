@@ -51,6 +51,7 @@ const actualizarProducto = (req, res) => {
         res.json({ mensaje: "Producto actualizao con éxito" });
     });
 };
+
 //Instruccion o bloque de instrucciones que reuitilizare
 const eliminarProducto = (req, res) => {
     const { id } = req.params; // se extrae especificamente el id y se guarda los datos en req.params
