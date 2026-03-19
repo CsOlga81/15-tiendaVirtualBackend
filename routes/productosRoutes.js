@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); //Trae la librelia
 const router = express.Router();
 
 const productoController = require('../controllers/productos.controller'); //Importe el controlador 
